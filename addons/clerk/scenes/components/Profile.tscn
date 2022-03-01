@@ -1,0 +1,261 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/clerk/assets/clerk.png" type="Texture" id=1]
+[ext_resource path="res://addons/clerk/assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/clerk/scenes/components/Profile.gd" type="Script" id=3]
+[ext_resource path="res://addons/clerk/assets/loading.png" type="Texture" id=4]
+[ext_resource path="res://addons/clerk/scenes/Logo.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Loading"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/ColorRect/LoadingSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+
+[node name="Profile" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -275.0
+margin_right = 200.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 400, 550 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -275.0
+margin_right = 200.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 400, 550 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 400, 550 )
+color = Color( 0.2, 0.356863, 0.945098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Control" parent="VBoxContainer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -175.0
+margin_right = 150.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 300, 350 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProfileInfo" type="VBoxContainer" parent="VBoxContainer/ColorRect/Main"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.0
+margin_top = -26.583
+margin_right = 153.0
+margin_bottom = 273.417
+rect_min_size = Vector2( 300, 300 )
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FirstName" type="HBoxContainer" parent="VBoxContainer/ColorRect/Main/ProfileInfo"]
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/Main/ProfileInfo/FirstName"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "First Name: "
+align = 1
+valign = 1
+
+[node name="TextEdit" type="LineEdit" parent="VBoxContainer/ColorRect/Main/ProfileInfo/FirstName"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+editable = false
+
+[node name="LastName" type="HBoxContainer" parent="VBoxContainer/ColorRect/Main/ProfileInfo"]
+margin_top = 56.0
+margin_right = 306.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/Main/ProfileInfo/LastName"]
+margin_left = 22.0
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "Last Name: "
+align = 1
+valign = 1
+
+[node name="TextEdit" type="LineEdit" parent="VBoxContainer/ColorRect/Main/ProfileInfo/LastName"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+editable = false
+
+[node name="Email" type="HBoxContainer" parent="VBoxContainer/ColorRect/Main/ProfileInfo"]
+margin_top = 112.0
+margin_right = 306.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/Main/ProfileInfo/Email"]
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "Email Address: "
+align = 1
+valign = 1
+
+[node name="TextEdit" type="LineEdit" parent="VBoxContainer/ColorRect/Main/ProfileInfo/Email"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+editable = false
+expand_to_text_length = true
+
+[node name="Button" type="Button" parent="VBoxContainer/ColorRect/Main/ProfileInfo"]
+margin_top = 168.0
+margin_right = 306.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 0, 27 )
+text = "Sign Out"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClerkIcon" type="TextureRect" parent="VBoxContainer/ColorRect"]
+visible = false
+anchor_left = 0.427
+anchor_top = 0.115
+anchor_right = 0.427
+anchor_bottom = 0.115
+margin_left = -120.8
+margin_top = -37.25
+margin_right = 484.2
+margin_bottom = 149.75
+rect_min_size = Vector2( 605, 187 )
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotIcon" type="TextureRect" parent="VBoxContainer/ColorRect"]
+visible = false
+anchor_left = 0.816
+anchor_top = 0.119
+anchor_right = 0.816
+anchor_bottom = 0.119
+margin_left = -21.4
+margin_top = -21.45
+margin_right = 42.6
+margin_bottom = 42.55
+rect_scale = Vector2( 0.669118, 0.669118 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect"]
+margin_left = 62.0
+margin_top = 109.0
+margin_right = 295.0
+margin_bottom = 142.0
+rect_scale = Vector2( 1.2306, 1.2306 )
+text = "PROFILE"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" type="TextureRect" parent="VBoxContainer/ColorRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -125.0
+margin_right = 32.0
+margin_bottom = -60.9998
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 2 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingSprite" type="Sprite" parent="VBoxContainer/ColorRect"]
+position = Vector2( 202, 310 )
+scale = Vector2( 0.56, 0.56 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Loading"
+anims/Loading = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="Control2" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.02
+anchor_top = 0.085
+anchor_right = 1.067
+anchor_bottom = 0.234
+margin_left = -9.53674e-07
+margin_top = -0.0500031
+margin_right = 605.2
+margin_bottom = 118.0
+rect_scale = Vector2( 0.409087, 0.409087 )
+
+[connection signal="pressed" from="VBoxContainer/ColorRect/Main/ProfileInfo/Button" to="." method="_on_SignOut_pressed"]

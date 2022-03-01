@@ -1,0 +1,329 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/clerk/assets/clerk.png" type="Texture" id=1]
+[ext_resource path="res://addons/clerk/assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/clerk/scenes/components/SignUp.gd" type="Script" id=3]
+[ext_resource path="res://addons/clerk/assets/loading.png" type="Texture" id=4]
+[ext_resource path="res://addons/clerk/scenes/Logo.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Loading"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SignedUpNext/LoadingSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SignedUpNext/LoadingSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="SignUp" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -275.0
+margin_right = 200.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 400, 550 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 10.0
+anchor_bottom = 13.75
+margin_right = -3600.0
+margin_bottom = -7012.5
+rect_min_size = Vector2( 400, 500 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 550.0
+rect_min_size = Vector2( 400, 550 )
+rect_pivot_offset = Vector2( 80, 118 )
+color = Color( 0.2, 0.356863, 0.945098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelButton" type="Button" parent="VBoxContainer/ColorRect"]
+margin_left = 9.0
+margin_top = 515.0
+margin_right = 109.0
+margin_bottom = 542.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/CancelButton"]
+anchor_left = 0.507
+anchor_top = 0.542
+anchor_right = 0.507
+anchor_bottom = 0.542
+margin_left = -73.7
+margin_top = -12.634
+margin_right = 75.3
+margin_bottom = 11.366
+size_flags_horizontal = 2
+size_flags_vertical = 2
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProfileInfo" type="VBoxContainer" parent="VBoxContainer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -125.0
+margin_right = 150.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 300, 350 )
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ProfileInfo"]
+margin_right = 306.0
+margin_bottom = 21.0
+text = "Sign Up"
+align = 1
+uppercase = true
+
+[node name="FirstName" type="HBoxContainer" parent="VBoxContainer/ColorRect/ProfileInfo"]
+margin_top = 46.0
+margin_right = 306.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ProfileInfo/FirstName"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "First Name: "
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ColorRect/ProfileInfo/FirstName"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+
+[node name="LastName" type="HBoxContainer" parent="VBoxContainer/ColorRect/ProfileInfo"]
+margin_top = 102.0
+margin_right = 306.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ProfileInfo/LastName"]
+margin_left = 22.0
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "Last Name: "
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ColorRect/ProfileInfo/LastName"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+
+[node name="Email" type="HBoxContainer" parent="VBoxContainer/ColorRect/ProfileInfo"]
+margin_top = 158.0
+margin_right = 306.0
+margin_bottom = 189.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ProfileInfo/Email"]
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "Email Address: "
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ColorRect/ProfileInfo/Email"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+
+[node name="Password" type="HBoxContainer" parent="VBoxContainer/ColorRect/ProfileInfo"]
+margin_top = 214.0
+margin_right = 306.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 300, 30 )
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ProfileInfo/Password"]
+margin_left = 30.0
+margin_top = 5.0
+margin_right = 102.0
+margin_bottom = 26.0
+text = "Password: "
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ColorRect/ProfileInfo/Password"]
+margin_left = 106.0
+margin_right = 306.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 200, 30 )
+secret = true
+
+[node name="SignUpButton" type="Button" parent="VBoxContainer/ColorRect/ProfileInfo"]
+margin_top = 270.0
+margin_right = 306.0
+margin_bottom = 297.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect/ProfileInfo/SignUpButton"]
+anchor_left = 0.507
+anchor_top = 0.542
+anchor_right = 0.507
+anchor_bottom = 0.542
+margin_left = -74.515
+margin_top = -12.008
+margin_right = 74.485
+margin_bottom = 11.992
+size_flags_horizontal = 2
+size_flags_vertical = 2
+text = "Sign Up"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClerkIcon" type="TextureRect" parent="VBoxContainer/ColorRect"]
+visible = false
+anchor_left = 0.427
+anchor_top = 0.115
+anchor_right = 0.427
+anchor_bottom = 0.115
+margin_left = -120.8
+margin_top = -37.25
+margin_right = 484.2
+margin_bottom = 149.75
+rect_min_size = Vector2( 605, 187 )
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotIcon" type="TextureRect" parent="VBoxContainer/ColorRect"]
+visible = false
+anchor_left = 0.816
+anchor_top = 0.119
+anchor_right = 0.816
+anchor_bottom = 0.119
+margin_left = -21.4
+margin_top = -21.45
+margin_right = 42.6
+margin_bottom = 42.55
+rect_scale = Vector2( 0.669118, 0.669118 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignedUpNext" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="SignedUpNext"]
+margin_left = 32.0
+margin_top = 147.0
+margin_right = 258.0
+margin_bottom = 192.0
+rect_scale = Vector2( 1.56694, 1.79078 )
+text = "Verify the link sent to your email.
+Then proceed to the next screen."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="SignedUpNext"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 136.0
+margin_top = 382.0
+margin_right = 236.0
+margin_bottom = 409.0
+rect_min_size = Vector2( 100, 27 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingSprite" type="Sprite" parent="SignedUpNext"]
+position = Vector2( 202, 310 )
+scale = Vector2( 0.56, 0.56 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Loading"
+anims/Loading = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="Control" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.02
+anchor_top = 0.085
+anchor_right = 1.067
+anchor_bottom = 0.234
+margin_left = -9.53674e-07
+margin_top = -0.0500031
+margin_right = 605.2
+margin_bottom = 118.0
+rect_scale = Vector2( 0.409087, 0.409087 )
+
+[connection signal="pressed" from="VBoxContainer/ColorRect/CancelButton" to="." method="_on_CancelButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ColorRect/ProfileInfo/SignUpButton" to="." method="_on_SignUpButton_pressed"]
+[connection signal="pressed" from="SignedUpNext/Back" to="." method="_on_Back_pressed"]
