@@ -1,10 +1,15 @@
 extends Node
 
-const front_end_api = "https://clerk.main.alien-31.lcl.dev"
+# Update this to be your Clerk frontend API.
+# https://g.pippy.io/deserted-servant-7111/clerk-example.png
+const FRONT_END_API = "https://clerk.main.alien-31.lcl.dev"
+
+# Once a user clicks on the Email link provided, it will automatically forward them to the following.
+# This URL doesn't really matter, after they click the link, they're verified.
+const LOGIN_REDIRECT_URL = "https://clerk.dev"
+
 const HTTP_HANDLER = preload("res://addons/clerk/scripts/utils/HTTP.gd")
-
 onready var http : HTTP_HANDLER
-
 func get_http() -> HTTP_HANDLER:
 	return http
 
