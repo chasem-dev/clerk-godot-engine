@@ -17,6 +17,6 @@ The purpose at this stage is proof of concept. I intend to build the Godot scene
 ![Example Sign In](https://g.pippy.io/unadvised-sink-9673/sign-in.png)
 ![Example Profile](https://g.pippy.io/knotty-bike-8586/profile.png)
 
-Demo GIF:
+Demo:
 
-https://g.pippy.io/womanly-quiet-8078/Clerk-Godot.gif
+https://streamable.com/w84syh
