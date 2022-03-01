@@ -111,14 +111,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/ColorRect/DefaultLogin/VBoxContainer/Email"]
-anchor_left = 0.221
-anchor_top = 0.136
-anchor_right = 0.221
-anchor_bottom = 0.136
-margin_left = -48.552
-margin_top = -25.082
-margin_right = -8.55201
-margin_bottom = -4.08199
+anchor_top = -0.677
+anchor_right = 0.137
+margin_left = 1.0
+margin_top = -0.0129986
+margin_right = -0.100002
+margin_bottom = 1.14441e-05
 custom_fonts/font = ExtResource( 5 )
 text = "Email"
 __meta__ = {
@@ -135,14 +133,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/ColorRect/DefaultLogin/VBoxContainer/Password"]
-anchor_left = 0.221
-anchor_top = 0.136
-anchor_right = 0.221
-anchor_bottom = 0.136
-margin_left = -49.552
-margin_top = -25.082
-margin_right = 16.448
-margin_bottom = -4.08199
+anchor_top = -0.677
+anchor_right = 0.223
+margin_left = 0.999985
+margin_top = -0.0130024
+margin_right = 0.0999832
+margin_bottom = 7.62939e-06
 text = "Password"
 __meta__ = {
 "_edit_use_anchors_": false
