@@ -1,4 +1,4 @@
-# clerk-sdk-godot
+# clerk-godot-engine
 > **Unofficial Clerk.dev frontend API for Godot Engine.**
 
 The purpose at this stage is proof of concept. I intend to build the Godot scenes to be more stand alone so that you can drag and drop certain components, or easily access specific data about your authenticated user.
